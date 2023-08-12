@@ -41,10 +41,17 @@ npm start
 
 ### Client
 
+```
+# src/.env
+
 REACT_APP_SERVER_BASE_URL=
 REACT_APP_AUTH_TOKEN=
+```
 
 ### Server
+
+```
+# src/.env
 
 DB_HOST=
 DB_PORT=
@@ -55,3 +62,4 @@ DB_NAME=
 JWT_SECRET=
 HASH_SALT=
 PORT=
+```
