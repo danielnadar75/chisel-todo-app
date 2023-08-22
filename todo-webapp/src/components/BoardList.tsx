@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import BoardItem from "./BoardItem";
 import { useSelector, useDispatch } from "react-redux";
-import { loadBoards, selectBoard } from "../actions";
+import { deleteBoard, loadBoards, requestDeleteBoard, selectBoard } from "../actions";
 import { Board, Boards } from "../types/board";
 import { RootState } from "../stores";
 
@@ -18,6 +18,10 @@ const BoardList = (props: Props) => {
     dispatch(selectBoard(id));
   };
 
+  const handleDeleteBoard = (id: string) => {
+    dispatch(requestDeleteBoard(id));
+  };
+
   useEffect(() => {
     dispatch(loadBoards());
   }, [dispatch]);
@@ -32,6 +36,7 @@ const BoardList = (props: Props) => {
             name={board.name}
             active={board.id === activeBoard}
             handleSelectBoard={handleSelectBoard}
+            handleDeleteBoard={handleDeleteBoard}
           />
         ))}
     </div>

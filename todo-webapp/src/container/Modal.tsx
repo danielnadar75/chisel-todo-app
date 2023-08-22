@@ -24,7 +24,7 @@ const Modal = ({ isOpen, handleToggle, className, children }: Props) => {
 
       <div
         role='dialog'
-        className={`p-8 relative mx-auto my-auto bg-white rounded-lg flex justify-center items-center ${
+        className={`p-8 relative m-auto bg-white rounded-lg flex justify-center items-center ${
           className ?? ""
         } `}
       >

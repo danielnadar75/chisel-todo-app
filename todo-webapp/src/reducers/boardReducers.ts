@@ -26,7 +26,11 @@ const boardReducer = (state = initialState, action: any) => {
       };
 
     case BOARDS.DELETE_BOARD:
-      return state.list.filter((board: Board) => board.id !== action.id);
+      const updatedBoards = state.list.filter((board: Board) => board.id !== action.id) as Board[]
+      return {
+        list: updatedBoards,
+        activeBoard: updatedBoards[0]?.id,
+      };
 
     case BOARDS.SELECT_BOARD:
       return {
